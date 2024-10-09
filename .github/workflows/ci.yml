@@ -58,7 +58,7 @@ jobs:
             ${{ steps.setup.outputs.image-name }}-standard-arm64
           cache-from: type=registry,ref=${{ steps.setup.outputs.cache-name }}-arm64
       - name: Build and push RPi build
-        uses: docker/bake-action@v4
+        uses: docker/bake-action@v5
         with:
           push: true
           targets: rpi
@@ -68,7 +68,7 @@ jobs:
             *.cache-from=type=registry,ref=${{ steps.setup.outputs.cache-name }}-arm64
             *.cache-to=type=registry,ref=${{ steps.setup.outputs.cache-name }}-arm64,mode=max
       - name: Build and push Rockchip build
-        uses: docker/bake-action@v3
+        uses: docker/bake-action@v5
         with:
           push: true
           targets: rk
@@ -93,7 +93,7 @@ jobs:
           BASE_IMAGE: timongentzsch/l4t-ubuntu20-opencv:latest
           SLIM_BASE: timongentzsch/l4t-ubuntu20-opencv:latest
           TRT_BASE: timongentzsch/l4t-ubuntu20-opencv:latest
-        uses: docker/bake-action@v4
+        uses: docker/bake-action@v5
         with:
           push: true
           targets: tensorrt
@@ -119,7 +119,7 @@ jobs:
           BASE_IMAGE: nvcr.io/nvidia/l4t-tensorrt:r8.5.2-runtime
           SLIM_BASE: nvcr.io/nvidia/l4t-tensorrt:r8.5.2-runtime
           TRT_BASE: nvcr.io/nvidia/l4t-tensorrt:r8.5.2-runtime
-        uses: docker/bake-action@v4
+        uses: docker/bake-action@v5
         with:
           push: true
           targets: tensorrt
@@ -144,7 +144,7 @@ jobs:
       - name: Build and push TensorRT (x86 GPU)
         env:
           COMPUTE_LEVEL: "50 60 70 80 90"
-        uses: docker/bake-action@v4
+        uses: docker/bake-action@v5
         with:
           push: true
           targets: tensorrt
@@ -157,7 +157,7 @@ jobs:
       #  env:
       #    AMDGPU: gfx
       #    HSA_OVERRIDE: 0
-      #  uses: docker/bake-action@v3
+      #  uses: docker/bake-action@v5
       #  with:
       #    push: true
       #    targets: rocm
@@ -170,7 +170,7 @@ jobs:
       #    AMDGPU: gfx900
       #    HSA_OVERRIDE: 1
       #    HSA_OVERRIDE_GFX_VERSION: 9.0.0
-      #  uses: docker/bake-action@v3
+      #  uses: docker/bake-action@v5
       #  with:
       #    push: true
       #    targets: rocm
@@ -183,7 +183,7 @@ jobs:
       #    AMDGPU: gfx1030
       #    HSA_OVERRIDE: 1
       #    HSA_OVERRIDE_GFX_VERSION: 10.3.0
-      #  uses: docker/bake-action@v3
+      #  uses: docker/bake-action@v5
       #  with:
       #    push: true
       #    targets: rocm
@@ -196,7 +196,7 @@ jobs:
       #    AMDGPU: gfx1100
       #    HSA_OVERRIDE: 1
       #    HSA_OVERRIDE_GFX_VERSION: 11.0.0
-      #  uses: docker/bake-action@v3
+      #  uses: docker/bake-action@v5
       #  with:
       #    push: true
       #    targets: rocm
