@@ -16,7 +16,7 @@ psutil == 5.9.*
 pydantic == 2.7.*
 git+https://github.com/fbcotter/py3nvml#egg=py3nvml
 PyYAML == 6.0.*
-pytz == 2024.1
+pytz == 2024.2
 pyzmq == 26.0.*
 ruamel.yaml == 0.18.*
 tzlocal == 5.2
