@@ -1,8 +1,8 @@
 default_target: local
 
 COMMIT_HASH := $(shell git log -1 --pretty=format:"%h"|tail -1)
-VERSION = 0.14.1
-IMAGE_REPO ?= ghcr.io/blakeblackshear/frigate
+VERSION = 0.3.0
+IMAGE_REPO ?= ghcr.io/vioneta/vcam
 GITHUB_REF_NAME ?= $(shell git rev-parse --abbrev-ref HEAD)
 CURRENT_UID := $(shell id -u)
 CURRENT_GID := $(shell id -g)
