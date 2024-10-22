@@ -45,7 +45,7 @@
     "hls.js": "^1.5.14",
     "idb-keyval": "^6.2.1",
     "immer": "^10.1.1",
-    "konva": "^9.3.14",
+    "konva": "^9.3.16",
     "lodash": "^4.17.21",
     "lucide-react": "^0.407.0",
     "monaco-yaml": "^5.2.2",
